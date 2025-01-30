@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <header class="bg-white shadow-md p-4 sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="/en/" class="flex items-center">
+            <img src="/fairfinance24/logo.png" alt="FairFinance24 Logo" class="h-12">
+        </a>
+
+        <nav class="hidden md:flex space-x-6">
+            <a href="/en/" class="text-gray-700 hover:text-blue-600 font-semibold">🏠 Home</a>
+            <a href="/fairfinance24/en/about/" class="text-gray-700 hover:text-blue-600 font-semibold">ℹ️ About Us</a>
+        </nav>
+
+        
+        <div class="relative">
+            <select id="language-switcher" class="border p-2 pl-10 rounded bg-gray-100 text-gray-700 appearance-none cursor-pointer transition-all duration-300 transform hover:scale-105">
+                <option value="https://afrmstudio.github.io/fairfinance24/en/de" >🇩🇪 Deutsch</option>
+                <option value="https://afrmstudio.github.io/fairfinance24/en" selected>🇬🇧 English</option>
+                <option value="https://afrmstudio.github.io/fairfinance24/en/it" >🇮🇹 Italiano</option>
+                <option value="https://afrmstudio.github.io/fairfinance24/en/es" >🇪🇸 Español</option>
+            </select>
+        </div>
+    </div>
+</header>
+
+<script>
+document.getElementById("language-switcher").addEventListener("change", function() {
+    window.location.href = this.value;
+});
+</script>
+
+
+    
+    <div class="max-w-4xl mx-auto p-6 md:p-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-blue-700">About Us</h1>
+        <article class="mt-4 text-lg text-gray-700 leading-relaxed">
+            <h2 id="fairfinance24-gmbh">FairFinance24 GmbH</h2>
+<p>We are a company specializing in providing personalized financial solutions for our clients. With years of experience in the industry, we stand for transparency, trust, and security.</p>
+<h3 id="our-values">Our Values:</h3>
+<p>✅ <strong>Transparency</strong> – Clear and understandable financial advice.<br>
+✅ <strong>Security</strong> – Protection and stability for your assets.<br>
+✅ <strong>Experience</strong> – Expertise and customized solutions for your needs.</p>
+<p>📞 Contact us for a free consultation!</p>
+
+        </article>
+    </div>
+
+    
+    <footer class="p-6 bg-gray-800 text-white text-center">
+        <p>&copy; 2025 FairFinance24</p>
+    </footer>
+
+</body>
+</html>
