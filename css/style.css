@@ -1,44 +1,55 @@
+/* Estilos Globales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
+    color: #333;
     text-align: center;
 }
 
-header {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-nav {
+/* Navbar */
+.navbar {
     display: flex;
     justify-content: space-between;
-    max-width: 800px;
-    margin: auto;
     align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
 }
 
 .nav-links button {
-    border: none;
     background: none;
+    border: none;
     cursor: pointer;
     font-size: 1rem;
-    margin: 0 10px;
     color: #555;
+    margin: 0 15px;
+    transition: color 0.3s ease-in-out;
 }
 
 .nav-links button:hover {
     color: #007bff;
 }
 
+/* Selector de idioma */
 .language-switcher button {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     margin: 5px;
-    background: #eee;
+    background: #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .language-switcher button:hover {
@@ -46,14 +57,46 @@ nav {
     color: white;
 }
 
+/* Secciones */
 main {
-    padding: 50px 20px;
+    padding: 100px 20px 50px;
 }
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Tarjeta de dirección */
+.address-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.address-box:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
 footer {
     background-color: #f1f1f1;
     padding: 10px;
-    position: absolute;
     width: 100%;
     bottom: 0;
+    position: fixed;
 }

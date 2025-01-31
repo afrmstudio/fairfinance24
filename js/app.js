@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.getElementById("nav-home").addEventListener("click", () => {
-        document.getElementById("home-section").style.display = "block";
-        document.getElementById("about-section").style.display = "none";
+        document.getElementById("home-section").classList.add("visible");
+        document.getElementById("about-section").classList.remove("visible");
     });
 
     document.getElementById("nav-about").addEventListener("click", () => {
-        document.getElementById("home-section").style.display = "none";
-        document.getElementById("about-section").style.display = "block";
+        document.getElementById("home-section").classList.remove("visible");
+        document.getElementById("about-section").classList.add("visible");
     });
 
     document.querySelectorAll(".lang-btn").forEach(button => {
