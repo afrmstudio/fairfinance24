@@ -3,23 +3,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateContent() {
         const t = translations[currentLang];
-
-        document.getElementById("nav-home").textContent = t.nav.home;
-        document.getElementById("nav-about").textContent = t.nav.about;
         document.getElementById("home-title").textContent = t.home.welcome;
         document.getElementById("home-slogan").textContent = t.home.slogan;
         document.getElementById("about-title").textContent = t.about.title;
         document.getElementById("about-description").textContent = t.about.description;
     }
 
-    document.getElementById("nav-home").addEventListener("click", () => {
-        document.getElementById("home-section").classList.add("visible");
-        document.getElementById("about-section").classList.remove("visible");
+    document.getElementById("nav-about").addEventListener("click", () => {
+        document.getElementById("home-section").classList.add("hidden");
+        document.getElementById("about-section").classList.remove("hidden");
     });
 
-    document.getElementById("nav-about").addEventListener("click", () => {
-        document.getElementById("home-section").classList.remove("visible");
-        document.getElementById("about-section").classList.add("visible");
+    document.getElementById("nav-home").addEventListener("click", () => {
+        document.getElementById("about-section").classList.add("hidden");
+        document.getElementById("home-section").classList.remove("hidden");
     });
 
     document.querySelectorAll(".lang-btn").forEach(button => {

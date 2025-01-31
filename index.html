@@ -18,8 +18,8 @@
                 <span>FAIRFINANCE24</span>
             </div>
             <div class="nav-links">
-                <button id="nav-home">Start</button>
-                <button id="nav-about">Über uns</button>
+                <button id="nav-home" class="active">Home</button>
+                <button id="nav-about">About Us</button>
             </div>
             <div class="language-switcher">
                 <button class="lang-btn" data-lang="de">DE</button>
@@ -31,14 +31,24 @@
 
     <!-- Main Content -->
     <main>
-        <section id="home-section" class="fade-in">
-            <h1 id="home-title">Willkommen bei</h1>
-            <p id="home-slogan">Unternehmensberatung, Immobilien, Beteiligungen & Konzepte</p>
-            <div class="address-box">
-                <p>Westbahnhof 5<br>38118 Braunschweig</p>
+        <!-- Sección Home (Visible por defecto) -->
+        <section id="home-section" class="home-container fade-in">
+            <div class="home-left">
+                <img src="./img/company.jpg" alt="Company Image">
+            </div>
+            <div class="home-right">
+                <h1 id="home-title">Willkommen bei</h1>
+                <h2>FAIRFINANCE24 GmbH</h2>
+                <p id="home-slogan">Unternehmensberatung, Immobilien, Beteiligungen & Konzepte</p>
+                <ul class="services-list">
+                    <li>📈 Unternehmensberatung</li>
+                    <li>🏢 Immobilien & Investments</li>
+                    <li>🔍 Finanzanalyse & Konzepte</li>
+                </ul>
             </div>
         </section>
 
+        <!-- Sección About Us (Inicialmente Oculta) -->
         <section id="about-section" class="fade-in hidden">
             <h2 id="about-title">Über uns</h2>
             <p id="about-description">
