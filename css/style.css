@@ -1,232 +1,47 @@
-/* Reset y Estilos Globales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* 📌 Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding: 15px 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-/* 📌 Logo */
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 50px;
-    margin-right: 15px;
-}
-
-/* 📌 Links de navegación */
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links button {
-    background: none;
-    border: none;
-    font-size: 1rem;
-    color: #555;
-    margin: 0 15px;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.nav-links button:hover,
-.nav-links button.active {
-    color: #007bff;
-    font-weight: bold;
-}
-
-/* 📌 Menú Desplegable de Idiomas */
-.language-menu {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.language-btn {
-    background: none;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    border-radius: 5px;
-    background: white;
-    transition: 0.3s ease;
-}
-
-.language-btn img {
-    width: 24px;
-    height: 18px;
-    margin-right: 8px;
-}
-
-.language-dropdown {
+/* Estilos generales */
+.hidden {
     display: none;
-    position: absolute;
-    background: white;
-    list-style: none;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    right: 0;
-    width: 150px;
-    top: 40px;
 }
 
-.language-dropdown li {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.language-dropdown li img {
-    width: 24px;
-    height: 18px;
-    margin-right: 10px;
-}
-
-.language-dropdown li:hover {
-    background: #007bff;
-    color: white;
-}
-
-/* Mostrar menú al hacer hover */
-.language-menu:hover .language-dropdown {
-    display: block;
-}
-
-/* 📌 Sección Home - Centrado y Espaciado Mejorado */
-.home-container {
+.home-container, .about-container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    padding: 120px 20px 50px;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 50px;
 }
 
-/* 📌 Imagen a la Izquierda */
-.home-left {
-    flex: 1;
-    text-align: center;
+/* 📌 Ocultar About Us al inicio */
+#about-section.hidden {
+    display: none;
 }
 
-.home-left img {
-    max-width: 100%;
-    height: auto;
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-left img {
+    width: 100%;
+    max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* 📌 Texto a la Derecha */
-.home-right {
-    flex: 1;
+.about-right {
     text-align: left;
-    padding: 40px;
+    max-width: 50%;
 }
 
-.home-right h1 {
-    font-size: 2.5rem;
-    color: #007bff;
-}
-
-.home-right h2 {
+.about-right h2 {
     font-size: 2rem;
-    margin: 10px 0;
-}
-
-.home-right p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-.services-list {
-    list-style: none;
-    margin-top: 15px;
-}
-
-.services-list li {
-    font-size: 1.1rem;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-}
-
-.services-list li::before {
-    content: "✔";
     color: #007bff;
-    margin-right: 10px;
 }
 
-/* 📌 Ajuste Responsive para Móviles */
-@media (max-width: 900px) {
-    .home-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .home-left {
-        order: 1;
-    }
-
-    .home-right {
-        order: 2;
-        text-align: center;
-    }
-
-    .home-left img {
-        max-width: 80%;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-links {
-        margin-top: 10px;
-    }
-
-    .language-menu {
-        margin-top: 10px;
-    }
-}
-
-/* 📌 Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #333;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.about-right p {
+    font-size: 1.1rem;
+    color: #555;
 }
