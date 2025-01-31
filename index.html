@@ -21,10 +21,17 @@
                 <button id="nav-home" class="active">Home</button>
                 <button id="nav-about">About Us</button>
             </div>
-            <div class="language-switcher">
-                <button class="lang-btn" data-lang="de">DE</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="es">ES</button>
+
+            <!-- Menú Desplegable de Idiomas -->
+            <div class="language-menu">
+                <button class="language-btn">
+                    <img src="./img/de.png" alt="DE" class="lang-icon"> DE
+                </button>
+                <ul class="language-dropdown">
+                    <li data-lang="de"><img src="./img/de.png" alt="DE"> Deutsch</li>
+                    <li data-lang="en"><img src="./img/en.png" alt="EN"> English</li>
+                    <li data-lang="es"><img src="./img/es.png" alt="ES"> Español</li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -45,13 +52,6 @@
                     <li>🔍 Finanzanalyse & Konzepte</li>
                 </ul>
             </div>
-        </section>
-
-        <section id="about-section" class="hidden">
-            <h2 id="about-title">Über uns</h2>
-            <p id="about-description">
-                FAIRFINANCE24 GmbH ist Ihr vertrauenswürdiger Partner für Unternehmensberatung, Immobilien, Beteiligungen und innovative Konzepte.
-            </p>
         </section>
     </main>
 

@@ -7,20 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("home-slogan").textContent = t.home.slogan;
         document.getElementById("about-title").textContent = t.about.title;
         document.getElementById("about-description").textContent = t.about.description;
+
+        // Actualiza la bandera y el texto del botón de idioma
+        const selectedLang = document.querySelector(`.language-dropdown li[data-lang="${currentLang}"]`);
+        document.querySelector(".language-btn img").src = selectedLang.querySelector("img").src;
+        document.querySelector(".language-btn").innerHTML = `<img src="${selectedLang.querySelector("img").src}" alt="${currentLang.toUpperCase()}"> ${selectedLang.textContent}`;
     }
 
-    document.getElementById("nav-about").addEventListener("click", () => {
-        document.getElementById("home-section").classList.add("hidden");
-        document.getElementById("about-section").classList.remove("hidden");
-    });
-
-    document.getElementById("nav-home").addEventListener("click", () => {
-        document.getElementById("about-section").classList.add("hidden");
-        document.getElementById("home-section").classList.remove("hidden");
-    });
-
-    document.querySelectorAll(".lang-btn").forEach(button => {
-        button.addEventListener("click", function () {
+    document.querySelectorAll(".language-dropdown li").forEach(item => {
+        item.addEventListener("click", function () {
             currentLang = this.getAttribute("data-lang");
             updateContent();
         });

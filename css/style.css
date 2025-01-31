@@ -35,115 +35,60 @@ body {
     margin-right: 10px;
 }
 
-.nav-links button {
+/* 📌 Menú Desplegable de Idiomas */
+.language-menu {
+    position: relative;
+}
+
+.language-btn {
     background: none;
     border: none;
     font-size: 1rem;
-    color: #555;
-    margin: 0 15px;
     cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.nav-links button:hover,
-.nav-links button.active {
-    color: #007bff;
-    font-weight: bold;
-}
-
-/* 📌 Sección Home: Imagen Izquierda - Texto Derecha */
-.home-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 120px 20px 50px;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-/* 📌 Imagen a la Izquierda */
-.home-left {
-    flex: 1;
-    text-align: center;
+.language-btn img {
+    width: 20px;
+    height: 15px;
+    margin-right: 8px;
 }
 
-.home-left img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* 📌 Texto a la Derecha */
-.home-right {
-    flex: 1;
-    text-align: left;
-    padding: 40px;
-}
-
-.home-right h1 {
-    font-size: 2.5rem;
-    color: #007bff;
-}
-
-.home-right h2 {
-    font-size: 2rem;
-    margin: 10px 0;
-}
-
-.home-right p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-.services-list {
+.language-dropdown {
+    display: none;
+    position: absolute;
+    background: white;
     list-style: none;
-    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    right: 0;
+    width: 130px;
 }
 
-.services-list li {
-    font-size: 1.1rem;
-    margin: 10px 0;
+.language-dropdown li {
     display: flex;
     align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.services-list li::before {
-    content: "✔";
-    color: #007bff;
+.language-dropdown li img {
+    width: 20px;
+    height: 15px;
     margin-right: 10px;
 }
 
-/* 📌 Ajuste Responsive para Móviles */
-@media (max-width: 900px) {
-    .home-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .home-left {
-        order: 1;
-    }
-
-    .home-right {
-        order: 2;
-        text-align: center;
-    }
-
-    .home-left img {
-        max-width: 80%;
-    }
+.language-dropdown li:hover {
+    background: #007bff;
+    color: white;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #333;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* Mostrar menú al pasar el cursor */
+.language-menu:hover .language-dropdown {
+    display: block;
 }
