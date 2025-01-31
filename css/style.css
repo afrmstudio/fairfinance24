@@ -1,9 +1,36 @@
-/* Estilos generales */
+/* General */
 .hidden {
     display: none;
 }
 
-.home-container, .about-container {
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: white;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-credit {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.footer-credit a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-credit a:hover {
+    text-decoration: underline;
+}
+
+/* Sección About Us */
+.about-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,16 +38,6 @@
     max-width: 1100px;
     margin: 0 auto;
     padding: 50px;
-}
-
-/* 📌 Ocultar About Us al inicio */
-#about-section.hidden {
-    display: none;
-}
-
-.about-container {
-    display: flex;
-    align-items: center;
     gap: 40px;
 }
 
@@ -28,7 +45,6 @@
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .about-right {

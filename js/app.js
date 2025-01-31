@@ -24,15 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".language-btn").innerHTML = `<img src="${selectedLang.querySelector("img").src}" alt="${currentLang.toUpperCase()}"> ${selectedLang.textContent}`;
     }
 
-    // 📌 Control de visibilidad entre Home y About Us
+    // 📌 Control de visibilidad entre Home y About Us con transiciones suaves
     document.getElementById("nav-home").addEventListener("click", () => {
-        document.getElementById("home-section").classList.remove("hidden");
-        document.getElementById("about-section").classList.add("hidden");
+        document.getElementById("home-section").style.display = "flex";
+        document.getElementById("about-section").style.display = "none";
     });
 
     document.getElementById("nav-about").addEventListener("click", () => {
-        document.getElementById("home-section").classList.add("hidden");
-        document.getElementById("about-section").classList.remove("hidden");
+        document.getElementById("home-section").style.display = "none";
+        document.getElementById("about-section").style.display = "flex";
     });
 
     // 📌 Cambiar idioma al hacer clic en el menú desplegable
