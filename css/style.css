@@ -1,9 +1,13 @@
 /* Reset y Estilos Globales */
-body {
-    font-family: 'Arial', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
     color: #333;
 }
 
@@ -12,80 +16,76 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 10px 20px;
+    background: white;
+    padding: 15px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
     z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
     height: 40px;
+    margin-right: 10px;
 }
 
 .nav-links button {
     background: none;
     border: none;
-    cursor: pointer;
     font-size: 1rem;
     color: #555;
     margin: 0 15px;
-    transition: color 0.3s ease-in-out;
-}
-
-.nav-links button.active {
-    font-weight: bold;
-    color: #007bff;
-}
-
-.nav-links button:hover {
-    color: #007bff;
-}
-
-/* Selector de idioma */
-.language-switcher button {
-    border: none;
-    padding: 5px 10px;
     cursor: pointer;
-    margin: 5px;
-    background: #ddd;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
-.language-switcher button:hover {
-    background: #007bff;
-    color: white;
+.nav-links button:hover,
+.nav-links button.active {
+    color: #007bff;
+    font-weight: bold;
 }
 
-/* Sección Home (Diseño de dos columnas) */
+/* Sección Home */
 .home-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    padding: 100px 20px;
+    padding: 120px 20px 50px;
 }
 
+.home-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen */
 .home-left {
     flex: 1;
-    max-width: 50%;
     text-align: center;
 }
 
 .home-left img {
-    width: 90%;
-    max-width: 500px;
+    max-width: 90%;
+    height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Texto */
 .home-right {
     flex: 1;
-    max-width: 50%;
     text-align: left;
     padding: 20px;
 }
@@ -95,9 +95,19 @@ body {
     color: #007bff;
 }
 
+.home-right h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.home-right p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
 .services-list {
     list-style: none;
-    padding: 0;
+    margin-top: 15px;
 }
 
 .services-list li {
@@ -113,17 +123,30 @@ body {
     margin-right: 10px;
 }
 
-/* Ocultar la sección About Us */
-.hidden {
-    display: none;
+/* Responsive */
+@media (max-width: 900px) {
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .home-right {
+        text-align: center;
+    }
+
+    .home-left img {
+        max-width: 100%;
+    }
 }
 
 /* Footer */
 footer {
-    background-color: #f1f1f1;
-    padding: 10px;
     text-align: center;
-    width: 100%;
-    bottom: 0;
+    padding: 15px;
+    background: #333;
+    color: white;
     position: fixed;
+    bottom: 0;
+    width: 100%;
 }
