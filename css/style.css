@@ -51,7 +51,7 @@ body {
     font-weight: bold;
 }
 
-/* Sección Home */
+/* Contenedor Home */
 .home-container {
     display: flex;
     justify-content: center;
@@ -63,7 +63,7 @@ body {
 .home-content {
     display: flex;
     max-width: 1200px;
-    width: 100%;
+    width: 90%;
     align-items: center;
     background: white;
     padding: 40px;
@@ -78,7 +78,7 @@ body {
 }
 
 .home-left img {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
 }
@@ -87,7 +87,7 @@ body {
 .home-right {
     flex: 1;
     text-align: left;
-    padding: 20px;
+    padding: 30px;
 }
 
 .home-right h1 {
@@ -123,7 +123,18 @@ body {
     margin-right: 10px;
 }
 
-/* Responsive */
+/* 📌 Ajuste de Desktop */
+@media (min-width: 1024px) {
+    .home-content {
+        max-width: 1000px;
+    }
+
+    .home-left img {
+        max-width: 450px;
+    }
+}
+
+/* 📌 Ajuste Responsive para Móviles */
 @media (max-width: 900px) {
     .home-content {
         flex-direction: column;
@@ -136,7 +147,7 @@ body {
     }
 
     .home-left img {
-        max-width: 100%;
+        max-width: 80%;
     }
 }
 
