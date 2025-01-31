@@ -1,65 +1,175 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAIRFINANCE24 GmbH</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script defer src="./js/translations.js"></script>
-    <script defer src="./js/app.js"></script>
-</head>
-<body>
+import React, { useState, useEffect } from 'react';
+import { Home, Building, LineChart, Search } from 'lucide-react';
 
-    <!-- Header -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="./img/logo.png" alt="FAIRFINANCE24 Logo">
-               
-            </div>
-            <div class="nav-links">
-                <button onclick="window.location.href='index.html'" class="active">Home</button>
-                <button onclick="window.location.href='about.html'">About Us</button>
+const LandingPage = () => {
+  const [currentLang, setCurrentLang] = useState('de');
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const translations = {
+    de: {
+      services: [
+        {
+          icon: <LineChart className="w-6 h-6" />,
+          title: 'Unternehmensberatung',
+          emoji: '📈'
+        },
+        {
+          icon: <Building className="w-6 h-6" />,
+          title: 'Immobilien & Investments',
+          emoji: '🏢'
+        },
+        {
+          icon: <Search className="w-6 h-6" />,
+          title: 'Finanzanalyse & Konzepte',
+          emoji: '🔍'
+        }
+      ]
+    },
+    en: {
+      services: [
+        {
+          icon: <LineChart className="w-6 h-6" />,
+          title: 'Corporate Consulting',
+          emoji: '📈'
+        },
+        {
+          icon: <Building className="w-6 h-6" />,
+          title: 'Real Estate & Investments',
+          emoji: '🏢'
+        },
+        {
+          icon: <Search className="w-6 h-6" />,
+          title: 'Financial Analysis & Concepts',
+          emoji: '🔍'
+        }
+      ]
+    },
+    es: {
+      services: [
+        {
+          icon: <LineChart className="w-6 h-6" />,
+          title: 'Consultoría Empresarial',
+          emoji: '📈'
+        },
+        {
+          icon: <Building className="w-6 h-6" />,
+          title: 'Bienes Raíces e Inversiones',
+          emoji: '🏢'
+        },
+        {
+          icon: <Search className="w-6 h-6" />,
+          title: 'Análisis Financiero y Conceptos',
+          emoji: '🔍'
+        }
+      ]
+    }
+  };
+
+  const t = translations[currentLang];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+      {/* Header */}
+      <header className="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <nav className="max-w-7xl mx-auto px-4 h-16">
+          <div className="flex justify-between items-center h-full">
+            <div className="flex items-center space-x-2 group">
+              <Home className="h-6 w-6 text-blue-600 transform group-hover:rotate-12 transition-transform duration-300" />
+              <span className="text-xl font-semibold text-blue-600">
+                FAIRFINANCE24
+              </span>
             </div>
 
-            <!-- Menú desplegable de idiomas -->
-            <div class="language-menu">
-                <button class="language-btn">
-                    <img src="./img/de.png" alt="DE"> DE
+            {/* Language Selector */}
+            <div className="flex items-center space-x-2">
+              {['de', 'en', 'es'].map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => setCurrentLang(lang)}
+                  className={`px-3 py-1 rounded-full text-sm transition-all duration-300 ${
+                    currentLang === lang 
+                      ? 'bg-blue-600 text-white' 
+                      : 'text-blue-600 hover:bg-blue-50'
+                  }`}
+                >
+                  {lang.toUpperCase()}
                 </button>
-                <ul class="language-dropdown">
-                    <li data-lang="de"><img src="./img/de.png" alt="DE"> Deutsch</li>
-                    <li data-lang="en"><img src="./img/en.png" alt="EN"> English</li>
-                    <li data-lang="es"><img src="./img/es.png" alt="ES"> Español</li>
-                </ul>
+              ))}
             </div>
+          </div>
         </nav>
-    </header>
+      </header>
 
-    <!-- Main Content -->
-    <main>
-        <section class="home-container">
-            <div class="home-left">
-                <img src="./img/company.png" alt="Company Image">
+      {/* Main Content */}
+      <main className={`pt-24 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left side - Company Image */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-blue-200 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+              <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden">
+                <img
+                  src="/img/company.png"
+                  alt="FAIRFINANCE24 Office"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+                <p className="text-blue-600 font-medium">Westbahnhof 5, 38118 Braunschweig</p>
+              </div>
             </div>
-            <div class="home-right">
-                <h1 id="home-title">Willkommen bei</h1>
-                <h2 id="home-main-title">FAIRFINANCE24 GmbH</h2>
-                <p id="home-slogan">Unternehmensberatung, Immobilien, Beteiligungen & Konzepte</p>
-                <ul class="services-list">
-                    <li id="service-consulting">📈 Unternehmensberatung</li>
-                    <li id="service-realEstate">🏢 Immobilien & Investments</li>
-                    <li id="service-finance">🔍 Finanzanalyse & Konzepte</li>
-                </ul>
+
+            {/* Right side - Company Description */}
+            <div className="space-y-8">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+                <span className="text-blue-600">FAIRFINANCE24</span> GmbH
+              </h1>
+
+              <div className="space-y-6">
+                {t.services.map((service, index) => (
+                  <div
+                    key={index}
+                    className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
+                    style={{
+                      animation: `fadeIn 0.5s ease-out ${index * 0.2}s forwards`
+                    }}
+                  >
+                    <div className="flex items-center space-x-4">
+                      <div className="text-3xl">{service.emoji}</div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {service.title}
+                        </h3>
+                      </div>
+                      {service.icon}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-        </section>
-    </main>
+          </div>
+        </div>
+      </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>© <span id="year"></span> FAIRFINANCE24 GmbH</p>
-        <p class="footer-credit">Designed by <a href="https://www.afrmstudio.it" target="_blank">AFRM STUDIO</a></p>
-    </footer>
+      {/* Footer */}
+      <footer className="bg-white/80 backdrop-blur-sm py-8">
+        <div className="max-w-7xl mx-auto px-4 text-center text-gray-600">
+          <p>© {new Date().getFullYear()} FAIRFINANCE24 GmbH</p>
+        </div>
+      </footer>
 
-</body>
-</html>
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default LandingPage;
