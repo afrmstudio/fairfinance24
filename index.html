@@ -63,6 +63,21 @@
             }
         }
 
+        /* Estilo específico para el logo */
+        .header img {
+            max-width: 600px;
+            display: block;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .header img {
+                max-width: 90%;
+            }
+        }
+
         /* Reset y variables */
         :root {
             --primary-color: #1e3a8a;
@@ -238,8 +253,7 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1>FAIRFINANCE24 GmbH</h1>
-            <p>Unternehmensberatung • Immobilien • Beteiligungen • Konzepte</p>
+            <img src="img/logoheader.png" alt="FAIRFINANCE24 GmbH Logo" style="max-width: 100%; height: auto;">
         </div>
     </header>
 
