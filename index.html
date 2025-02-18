@@ -63,37 +63,12 @@
             }
         }
 
-        /* Estilo específico para el logo */
-        .header img {
-            max-width: 700px;
-            width: 90%;
-            display: block;
-            margin: 0 auto;
-            padding: 40px;
-            animation: fadeInUp 1.2s ease-out;
-            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-            transform-origin: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .header img:hover {
-            transform: scale(1.02);
-        }
-
-        @media (max-width: 768px) {
-            .header img {
-                max-width: 90%;
-            }
-        }
-
         /* Reset y variables */
         :root {
-            --primary-color: #0a2472;
-            --secondary-color: #0e6ba8;
-            --accent-color: #135590;
-            --text-color: #2b2d42;
-            --light-bg: #f8f9fa;
-            --card-hover-shadow: rgba(10, 36, 114, 0.2);
+            --primary-color: #1e3a8a;
+            --secondary-color: #1d4ed8;
+            --text-color: #333;
+            --light-bg: #f3f4f6;
         }
 
         * {
@@ -117,27 +92,11 @@
 
         /* Header */
         .header {
-            background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color), var(--accent-color), #1e3a8a);
-            background-size: 300% 300%;
-            animation: gradientBG 20s ease infinite;
+            background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color), #2563eb, #1e40af);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white;
-            padding: 2rem 0;
-            min-height: 40vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, transparent, rgba(0,0,0,0.1));
-            pointer-events: none;
+            padding: 4rem 0;
         }
 
         .header h1 {
@@ -176,14 +135,13 @@
 
         .service-card {
             background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .service-card::before {
@@ -199,9 +157,8 @@
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px var(--card-hover-shadow);
-            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .service-card:hover::before {
@@ -281,7 +238,8 @@
 <body>
     <header class="header">
         <div class="container">
-            <img src="img/logoheader.png" alt="FAIRFINANCE24 GmbH - Unternehmensberatung, Immobilien, Beteiligungen & Konzepte" class="logo">
+            <h1>FAIRFINANCE24 GmbH</h1>
+            <p>Unternehmensberatung • Immobilien • Beteiligungen • Konzepte</p>
         </div>
     </header>
 
